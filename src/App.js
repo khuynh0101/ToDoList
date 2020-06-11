@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Item from './components/Item/Item.js';
 
-function App() {
+const App = () => {
+
+  var todoValue = '';
+  const handleChange = (e) => {
+    todoValue = e.target.value;
+  }
+
+  const handleClick = () => {
+    console.log(todoValue);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  <div>
+   <h1>To Do List</h1>
+   <Item onChangeHandler={handleChange} onClickHandler={handleClick}/>
+   </div>
+  )
+};
 
 export default App;

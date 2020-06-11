@@ -1,0 +1,8 @@
+.item { 
+    display:flex;
+    margin-left: 2%;     
+}
+
+.item-content{
+    padding-right:3px;
+}
