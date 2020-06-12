@@ -1,22 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Item from './components/Item/Item.js';
+import ListItem from './components/ListItem/ListItem.js';
 
 const App = () => {
+  const [todoItem, setToDoItem] = useState("");
+  const [todoList, setToDoList] = useState([]);
 
-  var todoValue = '';
   const handleChange = (e) => {
-    todoValue = e.target.value;
+    setToDoItem(e.target.value);
   }
-
   const handleClick = () => {
-    console.log(todoValue);
+    let todos = [...todoList];
+    todos.push(todoItem);
+    setToDoList(todos);
+    setToDoItem("");
   }
-
   return (
   <div>
    <h1>To Do List</h1>
-   <Item onChangeHandler={handleChange} onClickHandler={handleClick}/>
+   <Item value={todoItem} onChangeHandler={handleChange} onClickHandler={handleClick}/>
+   {
+     todoList.map((name, index) => {
+       return <div>{name} {index}</div>
+     })
+   }
+   <ListItem items={todoList}/>
    </div>
   )
 };

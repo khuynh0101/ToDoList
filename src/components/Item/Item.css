@@ -1,6 +1,6 @@
 .item { 
     display:flex;
-    margin-left: 2%;     
+    justify-content: center;
 }
 
 .item-content{
