@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Item from './components/Item/Item.js';
-import ListItem from './components/ListItem/ListItem.js';
+import AddItem from './components/AddItem/AddItem.js';
+import ListItems from './components/ListItems/ListItems.js';
 
 const App = () => {
   const [todoItem, setToDoItem] = useState("");
@@ -11,22 +11,23 @@ const App = () => {
     setToDoItem(e.target.value);
   }
   const handleClick = () => {
-    let todos = [...todoList];
-    todos.push(todoItem);
+    let newTodoItem = {
+      enabled: false,
+      name: todoItem
+    }
+    let todos = [...todoList, newTodoItem];
     setToDoList(todos);
     setToDoItem("");
   }
+  const handleCheckBoxChange = (index) => {
+    console.log(index);
+  }
   return (
-  <div>
-   <h1>To Do List</h1>
-   <Item value={todoItem} onChangeHandler={handleChange} onClickHandler={handleClick}/>
-   {
-     todoList.map((name, index) => {
-       return <div>{name} {index}</div>
-     })
-   }
-   <ListItem items={todoList}/>
-   </div>
+    <main>
+      <h1>To Do List</h1>
+      <AddItem value={todoItem} onChangeHandler={handleChange} onClickHandler={handleClick} />
+      <ListItems items={todoList} checkBoxChanged={handleCheckBoxChange}  />
+    </main>
   )
 };
 

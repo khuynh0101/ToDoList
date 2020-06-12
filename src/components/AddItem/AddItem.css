@@ -1,8 +1,8 @@
-.item { 
+.additem {  
     display:flex;
     justify-content: center;
 }
 
-.item-content{
+.additem-content{
     padding-right:3px;
 }
