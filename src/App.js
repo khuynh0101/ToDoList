@@ -5,38 +5,54 @@ import ListItems from './components/ListItems/ListItems.js';
 
 const App = () => {
   const [todoItem, setToDoItem] = useState('');
-  const [todoList, setToDoList] = useState([]);
+  const [todoListItem, setToDoList] = useState([]);
 
   const handleChange = (e) => {
     setToDoItem(e.target.value);
   };
   const handleAddItemClick = () => {
-    if (todoItem !== '') {
+    if (todoItem.trim() !== '') {
       let newTodoItem = {
         isChecked: false,
         name: todoItem,
         isEditing: false,
       };
-      let todos = [...todoList, newTodoItem];
-      setToDoList(todos);
-      setToDoItem('');
+      let todoList = [...todoListItem, newTodoItem];
+      setToDoList(todoList);      
     }
+    setToDoItem('');
   };
   const handleCheckBoxChange = (index) => {
-    const todoItemList = [...todoList];
-    const todoItem = todoItemList[index];
+    const todoList = [...todoListItem];
+    const todoItem = todoList[index];
     todoItem.isChecked = !todoItem.isChecked;
     if (todoItem.isChecked) {
       todoItem.isEditing = false;
     }
-    // todoItemList[index].enabled = !todoItemList[index].enabled;
-    setToDoList(todoItemList);
+    setToDoList(todoList);
   };
-  const handleEditButtonClicked = (index) => {
-    const todoListItem = [...todoList];
-    const todoItem = todoListItem[index];
+  const handleEditButtonClick = (index) => {
+    const todoList = [...todoListItem];
+    const todoItem = todoList[index];
     todoItem.isEditing = true;
-    setToDoList(todoListItem);
+    setToDoList(todoList);
+  };
+  const handleItemChange = (index, event) => {
+    const todoList = [...todoListItem];
+    const todoItem = todoList[index];
+    todoItem.name = event.target.value;
+    setToDoList(todoList);
+  };
+  const handleEditFinishedClick = (index) => {
+    const todoList = [...todoListItem];
+    const todoItem = todoList[index];
+    todoItem.isEditing = false;
+    setToDoList(todoList);
+  };
+  const handleRemoveClick = (index) => {
+    const todoList = [...todoListItem];
+    todoList.splice(index,1);
+    setToDoList(todoList);
   };
   return (
     <main>
@@ -47,9 +63,12 @@ const App = () => {
         onClickHandler={handleAddItemClick}
       />
       <ListItems
-        items={todoList}
+        items={todoListItem}
         checkBoxChanged={handleCheckBoxChange}
-        editButtonClicked={handleEditButtonClicked}
+        editClicked={handleEditButtonClick}
+        itemChanged={handleItemChange}
+        editFinishClicked={handleEditFinishedClick}
+        removedClicked={handleRemoveClick}
       />
     </main>
   );

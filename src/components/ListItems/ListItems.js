@@ -1,8 +1,15 @@
-import React from "react";
-import "./ListItems.css";
-import Item from "./Item.js";
+import React from 'react';
+import './ListItems.css';
+import Item from './Item.js';
 
-const ListItems = ({ items, checkBoxChanged, editButtonClicked }) => {
+const ListItems = ({
+  items,
+  checkBoxChanged,
+  editClicked,
+  itemChanged,
+  editFinishClicked,
+  removedClicked
+}) => {
   if (items.length > 0)
     return (
       <div className='items'>
@@ -14,7 +21,10 @@ const ListItems = ({ items, checkBoxChanged, editButtonClicked }) => {
               isChecked={item.isChecked}
               isEditing={item.isEditing}
               onCheckBoxChanged={() => checkBoxChanged(index)}
-              onEditButtonClicked={() => editButtonClicked(index)}
+              onEditButtonClicked={() => editClicked(index)}
+              onItemChanged={(event) => itemChanged(index, event)}
+              onEditFinishClicked={() => editFinishClicked(index)}
+              onRemoveButtonClicked={() => removedClicked(index)}
             />
           );
         })}

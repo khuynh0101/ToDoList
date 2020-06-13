@@ -4,7 +4,7 @@
 }
 
 .additem-content {
-  padding-right: 3px;
+  padding-right: .25rem;
 }
 
 .additem-button {
@@ -16,7 +16,7 @@
   cursor: pointer;
   color: #000;
   font-size: 0.83rem;
-  padding: 6px 24px;
+  padding: .3rem 1.5rem;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
   outline: none;
