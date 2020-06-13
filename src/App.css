@@ -1,8 +1,16 @@
-main{
+main {
   max-width: 800px;
 }
- 
-h1{
-  text-align:center;
+
+h1 {
+  text-align: center;
   font-size: 2rem;
+}
+
+input {
+  outline: none;
+}
+
+input[type="image"]:disabled {
+  opacity: 0.5;
 }

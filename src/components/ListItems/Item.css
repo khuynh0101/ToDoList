@@ -1,12 +1,27 @@
-.item{
-    max-width: 400px;
-    margin:auto;
-    padding: 8px 0 8px 0;
-    display:grid;
-    grid-template-columns: .5fr 4fr 1fr 1fr;
-    grid-column-gap:4px;    
+.item {
+  padding: 8px;
+  display: grid;
+  grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr;
+  grid-column-gap: 4px;
+  align-items: center;
 }
 
-.item-disabled{
-    text-decoration: line-through;
+.item:nth-child(odd) {
+  background: #f1f1f1;
 }
+
+.item-disabled {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.item-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background:none;
+}
+
+.item-button:disabled {
+   opacity: .5;
+  }

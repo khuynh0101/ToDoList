@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 body {
   margin: 0;
   font-family: Roboto;
@@ -8,4 +9,11 @@ body {
 
 code {
   font-family: Roboto;
+}
+
+input[type='text'] {
+  padding: 6px;
+  border: none;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
 }
