@@ -1,5 +1,6 @@
 import React from "react";
 import "./AddItem.css";
+import isEnterKey  from '../../utils/helpers.js';
 
 const AddItem = ({ value, onChangeHandler, onClickHandler }) => {
   return (
@@ -10,13 +11,14 @@ const AddItem = ({ value, onChangeHandler, onClickHandler }) => {
           value={value}
           type='text'
           onChange={onChangeHandler}
+          onKeyDown={(event)=>isEnterKey(event, onClickHandler)}
         />{" "}
       </div>
       <button className='additem-button' type='button' onClick={onClickHandler}>
-        Add Item
+        Add
       </button>
     </div>
   );
-};
+}; 
 
 export default AddItem;

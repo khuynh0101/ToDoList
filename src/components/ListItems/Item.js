@@ -1,5 +1,6 @@
 import React from 'react';
 import './Item.css';
+import isEnterKey  from '../../utils/helpers.js';
 
 const Item = ({
   name,
@@ -18,12 +19,6 @@ const Item = ({
     strikeTextClassName = 'item-disabled';
   }
 
-  const handleEnterKeyPressed = (event) => {   
-    if (event.keyCode === 13) {
-      onEditFinishClicked();
-    }
-  };
-
   return (
     <div className='item'>
       <input
@@ -37,7 +32,7 @@ const Item = ({
             type='text'
             value={name}
             onChange={onItemChanged}
-            onKeyDown={handleEnterKeyPressed}
+            onKeyDown={(event)=>isEnterKey(event, onEditFinishClicked)}
           />
           <button className='item-button' onClick={onEditFinishClicked}>
             <svg

@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 /* Smartphones (portrait) ----------- */
-@media only screen and (max-width: 320px) {
-  html {
-    font-size: 12px;
-  }
+html{
+  font-size: 12px;
 }
 
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 2048px) {
+  html {
+    font-size: 18px;
+  }
+}
 body {
   margin: 0;
   font-family: Roboto;
@@ -25,7 +38,6 @@ input[type='text'] {
   border: none;
   border: 1px solid #dcdcdc;
   border-radius: 5px;
-  width: 11.25rem;
 }
 
 input[type='image']:disabled {
