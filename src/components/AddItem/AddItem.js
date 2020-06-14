@@ -1,6 +1,6 @@
 import React from "react";
 import "./AddItem.css";
-import isEnterKey  from '../../utils/helpers.js';
+import isEnterKey  from '../../../src/utils/helpers.js';
 
 const AddItem = ({ value, onChangeHandler, onClickHandler }) => {
   return (

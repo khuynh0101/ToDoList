@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import './App.css';
 import AddItem from './components/AddItem/AddItem.js';
 import ListItems from './components/ListItems/ListItems.js';
-import usePersistentState from './utils/usePersistentState.js';
+import useStore from './utils/useStore.js';
 
 const App = () => {
   const [todoItem, setToDoItem] = useState('');
-  const [todoListItem, setToDoList] = usePersistentState('todos', []);
+  const [todoListItem, setToDoList] = useStore('todos', []);
 
-  let itemToAdd = '';
   const handleChange = (e) => {
     setToDoItem(e.target.value);
   };
