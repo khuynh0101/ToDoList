@@ -4,7 +4,7 @@
 }
 
 .additem-content {
-  padding-right: .25rem;
+  padding-right: 0.25rem;
 }
 
 .additem-button {
@@ -16,7 +16,7 @@
   cursor: pointer;
   color: #000;
   font-size: 1rem;
-  padding: .3rem 1.5rem;
+  padding: 0.3rem 1.5rem;
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
   outline: none;
@@ -25,6 +25,12 @@
 .additem-button:hover {
   background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
   background-color: #f6f6f6;
+}
+
+.additem-button:disabled {
+  opacity: 0.7;
+  cursor: auto;
+  background: none;
 }
 
 .additem-button:active {

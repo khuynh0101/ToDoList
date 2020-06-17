@@ -1,13 +1,13 @@
 .item {
-  padding: .5rem;
+  padding: 0.5rem;
   display: grid;
   grid-template-columns: 0.5fr 4fr 0.5fr 0.5fr;
-  grid-column-gap: .25rem;
+  grid-column-gap: 0.25rem;
   align-items: center;
 }
 
 .item:nth-child(odd) {
-  background: #f1f1f1;
+  background: #ececec;
 }
 
 .item-disabled {
@@ -19,9 +19,14 @@
   border: none;
   outline: none;
   cursor: pointer;
-  background:none;
+  background: none;
 }
 
 .item-button:disabled {
-   opacity: .5;
-  }
+  opacity: 0.5;
+}
+
+.item-button:active {
+  position: relative;
+  top: 1px;
+}

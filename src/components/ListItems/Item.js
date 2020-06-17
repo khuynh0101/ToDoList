@@ -1,6 +1,6 @@
 import React from 'react';
 import './Item.css';
-import isEnterKey  from '../../utils/helpers.js';
+import isEnterKey from '../../utils/helpers.js';
 
 const Item = ({
   name,
@@ -32,7 +32,7 @@ const Item = ({
             type='text'
             value={name}
             onChange={onItemChanged}
-            onKeyDown={(event)=>isEnterKey(event, onEditFinishClicked)}
+            onKeyDown={(event) => isEnterKey(event, onEditFinishClicked)}
           />
           <button className='item-button' onClick={onEditFinishClicked}>
             <svg

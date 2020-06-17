@@ -11,15 +11,17 @@ ReactDOM.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
+  )
+  // ,
+  // (
+  //   <Router>
+  //     <Switch>
+  //       <Route exact path='/to-do' component={App} />
+  //       <Route component={PageNotFound} />
+  //     </Switch>
+  //   </Router>
+  // )
   ),
-  (
-    <Router>
-      <Switch>
-        <Route exact path='/to-do' component={App} />
-        <Route component={PageNotFound} />
-      </Switch>
-    </Router>
-  )),
   //  <App/>,
   document.getElementById('root')
 );
