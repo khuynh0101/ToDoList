@@ -8,13 +8,12 @@
 }
 
 .additem-button {
-  box-shadow: inset 0px 1px 0px 0px #ffffff;
-  background: linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-  background-color: #ffffff;
+  background: #30475e;
+  background-color: #30475e;
   border-radius: 6px;
   border: 1px solid #dcdcdc;
   cursor: pointer;
-  color: #000;
+  color: #fff;
   font-size: 1rem;
   padding: 0.3rem 1.5rem;
   text-decoration: none;
@@ -23,14 +22,13 @@
 }
 
 .additem-button:hover {
-  background: linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-  background-color: #f6f6f6;
+  background-color: #456788;
 }
 
 .additem-button:disabled {
   opacity: 0.7;
   cursor: auto;
-  background: none;
+  background: #b9b9b9;
 }
 
 .additem-button:active {
